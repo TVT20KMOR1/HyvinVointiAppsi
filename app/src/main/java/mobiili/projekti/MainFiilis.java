@@ -85,6 +85,11 @@ public class MainFiilis extends AppCompatActivity {
 
         ProgressBar d1 = findViewById(R.id.d1);
         ProgressBar d2 = findViewById(R.id.d2);
+        ProgressBar d3 = findViewById(R.id.d3);
+        ProgressBar d4 = findViewById(R.id.d4);
+        ProgressBar d5 = findViewById(R.id.d5);
+        ProgressBar d6 = findViewById(R.id.d6);
+        ProgressBar d7 = findViewById(R.id.d7);
         ArrayList<String> historia = DB.getFiilisHistoria(tunnus);
         int index = historia.size();
         if (index > 0) {
@@ -104,6 +109,66 @@ public class MainFiilis extends AppCompatActivity {
                 }
                 if (Integer.parseInt(historia.get(1)) >= 50) {
                     d2.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                }
+                if (index > 2) {
+                    int d3i = (Integer.parseInt(historia.get(2)) + 100) / 2;
+                    d3.setProgress(d3i);
+                    if (Integer.parseInt(historia.get(2)) < 50) {
+                        d3.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                    }
+                    if (Integer.parseInt(historia.get(2)) >= 50) {
+                        d3.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                    }
+                    if (index > 3) {
+                        int d4i = (Integer.parseInt(historia.get(2)) + 100) / 2;
+                        d4.setProgress(d4i);
+                        if (Integer.parseInt(historia.get(2)) < 50) {
+                            d4.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                        }
+                        if (Integer.parseInt(historia.get(2)) >= 50) {
+                            d4.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                        }
+                        if (index > 4) {
+                            int d5i = (Integer.parseInt(historia.get(2)) + 100) / 2;
+                            d5.setProgress(d5i);
+                            if (Integer.parseInt(historia.get(2)) < 50) {
+                                d5.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                            }
+                            if (Integer.parseInt(historia.get(2)) >= 50) {
+                                d5.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                            }
+                            if (index > 5) {
+                                int d6i = (Integer.parseInt(historia.get(2)) + 100) / 2;
+                                d6.setProgress(d6i);
+                                if (Integer.parseInt(historia.get(2)) < 50) {
+                                    d6.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                                }
+                                if (Integer.parseInt(historia.get(2)) >= 50) {
+                                    d6.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                                }
+                                if (index > 6) {
+                                    int d7i = (Integer.parseInt(historia.get(2)) + 100) / 2;
+                                    d7.setProgress(d7i);
+                                    if (Integer.parseInt(historia.get(2)) < 50) {
+                                        d7.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+                                    }
+                                    if (Integer.parseInt(historia.get(2)) >= 50) {
+                                        d7.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+                                    }
+                                } else {
+                                    d7.setProgress(0);
+                                }
+                            } else {
+                                d6.setProgress(0);
+                            }
+                        } else {
+                            d5.setProgress(0);
+                        }
+                    } else {
+                        d4.setProgress(0);
+                    }
+                } else {
+                    d3.setProgress(0);
                 }
             } else {
                 d2.setProgress(0);

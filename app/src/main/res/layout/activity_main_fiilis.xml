@@ -64,103 +64,238 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/fiilisTanaan"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/fiilisScroll"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/valikko"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="@string/fiilistanaan"
-        android:textSize="20sp" />
+        android:nestedScrollingEnabled="true">
 
-    <ImageView
-        android:id="@+id/fiilisKuva"
-        android:layout_width="220dp"
-        android:layout_height="189dp"
-        android:layout_below="@id/fiilisTanaan"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp" />
+        <RelativeLayout
+            android:id="@+id/relativeFiilis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="20dp"
+            android:orientation="vertical">
 
-    <SeekBar
-        android:id="@+id/fiilisAsteikko"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fiilisKuva"
-        android:layout_marginTop="0dp"
-        android:max="100"
-        android:min="-100"
-        android:progress="0" />
+            <TextView
+                android:id="@+id/fiilisTanaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="@string/fiilistanaan"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/fiilisOhje"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fiilisAsteikko"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="@string/fiilisOhje"
-        android:textSize="25sp" />
+            <ImageView
+                android:id="@+id/fiilisKuva"
+                android:layout_width="220dp"
+                android:layout_height="189dp"
+                android:layout_below="@id/fiilisTanaan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp" />
 
-    <Button
-        android:id="@+id/tallennaFiilis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fiilisOhje"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/napit"
-        android:paddingHorizontal="40dp"
-        android:paddingVertical="15dp"
-        android:text="@string/tallenna1"
-        android:textSize="15sp" />
+            <SeekBar
+                android:id="@+id/fiilisAsteikko"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fiilisKuva"
+                android:layout_marginTop="0dp"
+                android:max="100"
+                android:min="-100"
+                android:progress="0" />
 
-    <TextView
-        android:id="@+id/d1Teksti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tallennaFiilis"
-        android:layout_marginTop="55dp"
-        android:paddingStart="15dp"
-        android:text="Eilinen fiilis"
-        android:textSize="20sp"
-        android:translationZ="10dp" />
+            <TextView
+                android:id="@+id/fiilisOhje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fiilisAsteikko"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/fiilisOhje"
+                android:textSize="25sp" />
 
-    <ProgressBar
-        android:id="@+id/d1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tallennaFiilis"
-        android:layout_marginTop="60dp"
-        android:max="100"
-        android:min="0"
-        android:paddingHorizontal="10dp"
-        android:progress="0"
-        android:scaleY="8" />
+            <Button
+                android:id="@+id/tallennaFiilis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fiilisOhje"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/napit"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="15dp"
+                android:text="@string/tallenna1"
+                android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/d2Teksti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/d1"
-        android:layout_marginTop="35dp"
-        android:paddingStart="15dp"
-        android:text="Toissapäiväinen fiilis"
-        android:textSize="20sp"
-        android:translationZ="10dp" />
+            <TextView
+                android:id="@+id/d1Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tallennaFiilis"
+                android:layout_marginTop="55dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd1"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
 
-    <ProgressBar
-        android:id="@+id/d2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/d1"
-        android:layout_marginTop="40dp"
-        android:max="100"
-        android:min="0"
-        android:paddingHorizontal="10dp"
-        android:progress="0"
-        android:scaleY="8" />
+            <ProgressBar
+                android:id="@+id/d1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tallennaFiilis"
+                android:layout_marginTop="60dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
 
+            <TextView
+                android:id="@+id/d2Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d1"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd2"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d1"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+
+            <TextView
+                android:id="@+id/d3Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d2"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd3"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d2"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+
+            <TextView
+                android:id="@+id/d4Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d3"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd4"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d3"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+
+            <TextView
+                android:id="@+id/d5Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d4"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd5"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d4"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+
+            <TextView
+                android:id="@+id/d6Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d5"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd6"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d6"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d5"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+
+            <TextView
+                android:id="@+id/d7Teksti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d6"
+                android:layout_marginTop="20dp"
+                android:paddingStart="15dp"
+                android:text="@string/fiilisd7"
+                android:textSize="20sp"
+                android:translationZ="10dp" />
+
+            <ProgressBar
+                android:id="@+id/d7"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d6"
+                android:layout_marginTop="25dp"
+                android:max="100"
+                android:min="0"
+                android:paddingHorizontal="10dp"
+                android:progress="0"
+                android:scaleY="8" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

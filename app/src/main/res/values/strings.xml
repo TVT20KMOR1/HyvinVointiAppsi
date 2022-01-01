@@ -70,5 +70,12 @@
     <string name="jumppateksti4">Core treeni 20min</string>
     <string name="jumppaohje">Liikuttu tänään</string>
     <string name="uusitehtava">Uusi tehtävä</string>
+    <string name="fiilisd1">Eilinen fiilis</string>
+    <string name="fiilisd2">Toissapäiväinen fiilis</string>
+    <string name="fiilisd3">Fiilis 3 päivää sitten</string>
+    <string name="fiilisd4">Fiilis 4 päivää sitten</string>
+    <string name="fiilisd5">Fiilis 5 päivää sitten</string>
+    <string name="fiilisd6">Fiilis 6 päivää sitten</string>
+    <string name="fiilisd7">Fiilis 7 päivää sitten</string>
 
 </resources>

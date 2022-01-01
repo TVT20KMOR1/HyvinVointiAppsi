@@ -165,7 +165,6 @@ public class DataBase extends SQLiteOpenHelper {
         int num = 0;
         ArrayList<String> historia = new ArrayList<>();
         ArrayList<String> d1 = new ArrayList<>();
-        ArrayList<String> d2 = new ArrayList<>();
         SQLiteDatabase MyDB = this.getReadableDatabase();
         Cursor c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
                 "'now','start of day','-1 days') and aika < datetime('now','start of day')", new String[]{tunnus});
@@ -182,22 +181,109 @@ public class DataBase extends SQLiteOpenHelper {
         if (d1.size() > 0) {
             historia.add(Integer.toString(num / d1.size()));
         }
+        d1.clear();
         c.close();
         c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
                 "'now','start of day','-2 days') and aika < datetime('now','start of day','-1 days')", new String[]{tunnus});
         c.moveToFirst();
         while ((!c.isAfterLast())) {
             if ((c != null) && (c.getCount() > 0)) {
-                d2.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
                 c.moveToNext();
             }
         }
-        for (int i = 0; i < d2.size(); i++) {
-            num += Integer.parseInt(d2.get(i));
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
         }
-        if (d2.size() > 0) {
-            historia.add(Integer.toString(num / d2.size()));
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
         }
+        d1.clear();
+        c.close();
+        c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
+                "'now','start of day','-3 days') and aika < datetime('now','start of day','-2 days')", new String[]{tunnus});
+        c.moveToFirst();
+        while ((!c.isAfterLast())) {
+            if ((c != null) && (c.getCount() > 0)) {
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                c.moveToNext();
+            }
+        }
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
+        }
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
+        }
+        d1.clear();
+        c.close();
+        c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
+                "'now','start of day','-4 days') and aika < datetime('now','start of day','-3 days')", new String[]{tunnus});
+        c.moveToFirst();
+        while ((!c.isAfterLast())) {
+            if ((c != null) && (c.getCount() > 0)) {
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                c.moveToNext();
+            }
+        }
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
+        }
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
+        }
+        d1.clear();
+        c.close();
+        c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
+                "'now','start of day','-5 days') and aika < datetime('now','start of day','-4 days')", new String[]{tunnus});
+        c.moveToFirst();
+        while ((!c.isAfterLast())) {
+            if ((c != null) && (c.getCount() > 0)) {
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                c.moveToNext();
+            }
+        }
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
+        }
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
+        }
+        d1.clear();
+        c.close();
+        c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
+                "'now','start of day','-6 days') and aika < datetime('now','start of day','-5 days')", new String[]{tunnus});
+        c.moveToFirst();
+        while ((!c.isAfterLast())) {
+            if ((c != null) && (c.getCount() > 0)) {
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                c.moveToNext();
+            }
+        }
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
+        }
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
+        }
+        d1.clear();
+        c.close();
+        c = MyDB.rawQuery("select * from fiilis where tunnus =? and aika > datetime(" +
+                "'now','start of day','-7 days') and aika < datetime('now','start of day','-6 days')", new String[]{tunnus});
+        c.moveToFirst();
+        while ((!c.isAfterLast())) {
+            if ((c != null) && (c.getCount() > 0)) {
+                d1.add(c.getString(c.getColumnIndexOrThrow("fiilis")));
+                c.moveToNext();
+            }
+        }
+        for (int i = 0; i < d1.size(); i++) {
+            num += Integer.parseInt(d1.get(i));
+        }
+        if (d1.size() > 0) {
+            historia.add(Integer.toString(num / d1.size()));
+        }
+        d1.clear();
         c.close();
         return historia;
     }
